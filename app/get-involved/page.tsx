@@ -1,48 +1,62 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import FormspreeForm from "@/components/FormspreeForm";
-import { site } from "@/lib/site";
+import { finances, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Get involved",
-  description: "Volunteer with Caring Souls Foundation, or partner with us as a church or organisation.",
+  description:
+    "Volunteer with Caring Souls Foundation, or partner with us as a church, charity or voluntary organisation.",
 };
 
 export default function GetInvolved() {
   return (
     <>
       <PageHero
-        title="Get involved"
-        intro="Whether you have an hour a month or a skill to share, there’s a place for you here."
+        title="Powered by people who care"
+        intro="Whether you can give a few hours, a particular skill or simply a willingness to help, there may be a place for you here."
         next="#f2f7f9"
       />
 
       <section className="section band-mist" style={{ paddingTop: "clamp(1.5rem, 4vw, 3rem)" }}>
         <div className="wrap split">
           <div>
-            <h2>Ways to volunteer</h2>
+            <h2>Volunteer with us</h2>
+            <p>
+              {finances.volunteers} volunteers currently support our work. From community outreach and
+              practical assistance to helping run charitable activities, volunteers help us extend our
+              reach and serve people in our communities.
+            </p>
             <ul className="values">
               <li>
-                <strong>Events and worship</strong>
-                <span>Set up, welcome guests, sing, play or help run the sound desk.</span>
+                <strong>Community outreach</strong>
+                <span>Help with food and clothing support and community assistance.</span>
               </li>
               <li>
-                <strong>Youth mentoring</strong>
-                <span>Spend time with young people and help them build confidence. DBS checks apply.</span>
+                <strong>Mentoring and guidance</strong>
+                <span>Spend time with young people and people facing difficult circumstances.</span>
               </li>
               <li>
-                <strong>Community support</strong>
-                <span>Pack and deliver essentials, or visit people who are isolated.</span>
+                <strong>Pastoral and wellbeing support</strong>
+                <span>Offer a listening ear alongside our pastoral care activities.</span>
               </li>
               <li>
                 <strong>Skills and admin</strong>
-                <span>Teaching, design, finance, fundraising or office help.</span>
+                <span>Teaching, design, finance, fundraising or office support.</span>
               </li>
             </ul>
-            <h2 style={{ marginTop: "2.5rem" }}>Churches and partners</h2>
+
+            <h2 id="partner" style={{ marginTop: "2.5rem" }}>
+              Partner with us
+            </h2>
             <p>
-              If you lead a church or organisation and want support with outreach, pastoral care or an
-              event, use the form and choose “Partnership”.
+              We work with churches, charities and voluntary organisations to improve access to
+              services and support. Working together lets organisations share knowledge, resources and
+              experience, and reach people who might otherwise struggle to get help.
+            </p>
+            <p>
+              If your organisation would like to explore a partnership, choose “Partnership” on the
+              form and we’ll be in touch.
             </p>
           </div>
 
@@ -70,10 +84,10 @@ export default function GetInvolved() {
                 </div>
                 <div className="field">
                   <label htmlFor="v-area">I’m interested in</label>
-                  <select id="v-area" name="interest" defaultValue="Events and worship">
-                    <option>Events and worship</option>
-                    <option>Youth mentoring</option>
-                    <option>Community support</option>
+                  <select id="v-area" name="interest" defaultValue="Community outreach">
+                    <option>Community outreach</option>
+                    <option>Mentoring and guidance</option>
+                    <option>Pastoral and wellbeing support</option>
                     <option>Skills and admin</option>
                     <option>Partnership</option>
                   </select>
@@ -81,7 +95,11 @@ export default function GetInvolved() {
               </div>
               <div className="field">
                 <label htmlFor="v-msg">Tell us a little about yourself</label>
-                <textarea id="v-msg" name="message" placeholder="Where you’re based, when you’re free, and anything you’d like us to know" />
+                <textarea
+                  id="v-msg"
+                  name="message"
+                  placeholder="Where you’re based, when you’re free, and anything you’d like us to know"
+                />
               </div>
               <input type="hidden" name="_subject" value="New volunteer / partner enquiry" />
             </FormspreeForm>

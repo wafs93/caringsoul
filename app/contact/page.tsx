@@ -5,15 +5,17 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get in touch with Caring Souls Foundation.",
+  description: "Get in touch with Caring Souls Foundation in Barking, London.",
 };
 
 export default function Contact() {
+  const { address } = site;
+
   return (
     <>
       <PageHero
-        title="Contact us"
-        intro="Questions, prayer requests, partnership ideas or a need for help: we’d love to hear from you."
+        title="We’d love to hear from you"
+        intro="Find out more about our work, volunteer, discuss a partnership, or ask about our charitable activities."
         next="#f2f7f9"
       />
 
@@ -27,12 +29,28 @@ export default function Contact() {
                 <a href={`mailto:${site.email}`}>{site.email}</a>
               </li>
               <li>
-                <span>Phone</span>
+                <span>Telephone</span>
                 <a href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>
               </li>
               <li>
-                <span>Location</span>
-                {site.address}
+                <span>Address</span>
+                <address>
+                  Caring Souls Foundation
+                  <br />
+                  {address.line1}
+                  <br />
+                  {address.line2}
+                  <br />
+                  {address.town}
+                  <br />
+                  {address.postcode}
+                </address>
+              </li>
+              <li>
+                <span>Registered charity</span>
+                <a href={site.charityRegisterUrl} target="_blank" rel="noopener noreferrer">
+                  No. {site.charityNumber}
+                </a>
               </li>
             </ul>
             <p className="note">We aim to reply within two working days.</p>
@@ -60,8 +78,8 @@ export default function Contact() {
                 <select id="c-topic" name="topic" defaultValue="General enquiry">
                   <option>General enquiry</option>
                   <option>I need support</option>
-                  <option>Prayer request</option>
-                  <option>Church partnership</option>
+                  <option>Volunteering</option>
+                  <option>Partnership</option>
                   <option>Donations</option>
                 </select>
               </div>

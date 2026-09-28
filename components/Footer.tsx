@@ -3,6 +3,7 @@ import { nav, site } from "@/lib/site";
 
 export default function Footer() {
   const socials = Object.entries(site.social).filter(([, url]) => url);
+  const { address } = site;
 
   return (
     <footer className="site-footer">
@@ -10,7 +11,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div>
             <div className="footer-brand">{site.name}</div>
-            <p className="footer-tagline">{site.tagline.join(". ")}.</p>
+            <p className="footer-tagline">{site.tagline}</p>
             <p>
               Registered charity in England and Wales, number{" "}
               <a href={site.charityRegisterUrl} target="_blank" rel="noopener noreferrer">
@@ -29,7 +30,7 @@ export default function Footer() {
                 </li>
               ))}
               <li>
-                <Link href="/donate/">Donate</Link>
+                <Link href="/donate/">Support our work</Link>
               </li>
             </ul>
           </div>
@@ -42,6 +43,13 @@ export default function Footer() {
               </li>
               <li>
                 <a href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>
+              </li>
+              <li>
+                <address>
+                  {address.line1}, {address.line2}
+                  <br />
+                  {address.town} {address.postcode}
+                </address>
               </li>
               {socials.map(([name, url]) => (
                 <li key={name}>
@@ -59,7 +67,10 @@ export default function Footer() {
             © {new Date().getFullYear()} {site.name}. Charitable incorporated organisation.
           </span>
           <span>
-            Website by <a href="https://wafsdesign.com" target="_blank" rel="noopener noreferrer">WafsDesign</a>
+            Website by{" "}
+            <a href="https://wafstech.com" target="_blank" rel="noopener noreferrer">
+              Wafs Tech
+            </a>
           </span>
         </div>
       </div>

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
-import { programmes } from "@/lib/site";
+import { beneficiaries, programmes } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "What we do",
-  description: "Church support, worship events, pastoral care, poverty relief, youth work and education.",
+  description:
+    "Practical support, work with children and young people, mentoring, wellbeing and pastoral care, and community outreach throughout England.",
 };
 
 export default function WhatWeDo() {
@@ -13,7 +14,7 @@ export default function WhatWeDo() {
     <>
       <PageHero
         title="What we do"
-        intro="From worship nights to food parcels, everything we do puts faith into practice in the community."
+        intro="Practical care and Christian compassion, brought into the communities we serve."
       />
 
       <section className="section" style={{ paddingTop: "clamp(1rem, 3vw, 2rem)" }}>
@@ -31,6 +32,26 @@ export default function WhatWeDo() {
               </div>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="section band-mist">
+        <div className="wrap">
+          <div className="section-intro">
+            <h2>Everyone deserves care</h2>
+            <p>
+              The Charity Commission record identifies these groups among those who may benefit from
+              our work. Our activities are not limited to one community or location.
+            </p>
+          </div>
+          <div className="ways">
+            {beneficiaries.map((b) => (
+              <div key={b.title} className="way">
+                <h3>{b.title}</h3>
+                <p>{b.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

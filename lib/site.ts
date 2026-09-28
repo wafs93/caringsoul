@@ -1,30 +1,36 @@
 // ─────────────────────────────────────────────────────────────
-// Edit this one file to update contact details, links and forms.
-// Anything marked TODO still needs real details from the charity.
+// Edit this one file to update contact details, links and content.
+// Anything marked TODO still needs confirming with the charity.
 // ─────────────────────────────────────────────────────────────
 
 export const site = {
   name: "Caring Souls Foundation",
   shortName: "Caring Souls",
   charityNumber: "1208787",
+  registeredDate: "24 June 2024",
   url: "https://caringsouls.org.uk",
-  tagline: ["Empowering lives", "Creating opportunities", "Building brighter tomorrows"],
+  tagline: "Faith in Action. Care in the Community.",
+  strapline: ["Empowering lives", "Creating opportunities", "Building brighter tomorrows"],
   description:
-    "Caring Souls Foundation is a Christian charity in England supporting churches, young people and families through pastoral care, worship, education and practical help.",
+    "Caring Souls Foundation is a Christian charity serving communities throughout England with practical support, community outreach, mentoring, pastoral care and education.",
 
-  // TODO: replace with the charity's real details
-  email: "info@caringsouls.org.uk",
-  phone: "+44 0000 000000",
-  address: "England, United Kingdom",
+  email: "sunshoos@hotmail.com",
+  phone: "07403 203506",
+  address: {
+    line1: "Mill Point",
+    line2: "86 Abbey Road",
+    town: "Barking",
+    postcode: "IG11 7FU",
+  },
 
-  // Create a free form at https://formspree.io and paste its ID (the part after /f/)
+  // Create free forms at https://formspree.io and paste the IDs (the part after /f/)
   // TODO: replace with real Formspree form IDs
   formspree: {
     contact: "YOUR_CONTACT_FORM_ID",
     volunteer: "YOUR_VOLUNTEER_FORM_ID",
   },
 
-  // TODO: paste a Stripe Payment Link, PayPal, or CAF/JustGiving page
+  // TODO: paste a Stripe Payment Link, PayPal, CAF or JustGiving page
   donateUrl: "",
   // TODO: add the charity bank account for transfers (leave blank to hide)
   bank: {
@@ -49,74 +55,149 @@ export const nav = [
   { href: "/about/", label: "About us" },
   { href: "/what-we-do/", label: "What we do" },
   { href: "/get-involved/", label: "Get involved" },
+  { href: "/governance/", label: "Governance" },
   { href: "/contact/", label: "Contact" },
 ];
 
+// What we do — the charity's activities
 export const programmes = [
   {
-    slug: "churches",
-    title: "Support for local churches",
+    slug: "practical-support",
+    title: "Practical support",
     summary:
-      "Practical advice and hands-on help for churches growing their ministry, pastoral care and outreach.",
+      "Sometimes people don’t need complicated solutions. They need someone to listen, offer guidance and help them find a way forward.",
     points: [
-      "Planning and setting up outreach programmes",
-      "Guidance on pastoral care and volunteer teams",
-      "Sharing resources between congregations",
+      "Practical assistance, advice and information",
+      "Support for people facing hardship and homelessness",
+      "Food and clothing where appropriate",
     ],
   },
   {
-    slug: "worship",
-    title: "Worship and music events",
+    slug: "children-and-young-people",
+    title: "Children and young people",
     summary:
-      "Gatherings built around live worship music, open to churches and to anyone in the community who wants to come.",
+      "We believe every child and young person should have the opportunity to grow, learn and fulfil their potential.",
     points: [
-      "Community worship nights",
-      "Developing worship leaders and musicians",
-      "Events held alongside partner churches",
+      "Mentoring and encouragement",
+      "Education and community support",
+      "Helping young people access the support they need",
     ],
   },
   {
-    slug: "pastoral",
-    title: "Pastoral care",
+    slug: "disabilities",
+    title: "Supporting people with disabilities",
     summary:
-      "Someone to listen, pray and walk alongside people through hard seasons, with care that extends beyond church walls.",
+      "People with disabilities can face additional barriers when accessing support and opportunities. Our work aims to help remove them.",
     points: [
-      "One-to-one listening and prayer",
-      "Visits and check-ins for isolated people",
-      "Signposting to specialist help",
+      "An inclusive approach to every activity we run",
+      "Dignity, respect and compassion as standard",
+      "Help accessing appropriate support",
     ],
   },
   {
-    slug: "poverty",
-    title: "Relief of poverty",
+    slug: "mentoring",
+    title: "Mentoring and guidance",
     summary:
-      "Practical help for individuals and families facing hardship, offered as faith in action.",
+      "A listening ear and the right guidance can make a significant difference to someone facing difficult circumstances.",
     points: [
-      "Food, clothing and essentials",
-      "Help finding local support services",
-      "Seasonal appeals for families in need",
+      "Encouragement and practical guidance",
+      "Information and signposting",
+      "Support through difficult seasons",
     ],
   },
   {
-    slug: "young-people",
-    title: "Young people",
+    slug: "wellbeing",
+    title: "Wellbeing and pastoral support",
     summary:
-      "Mentoring and activities that help children and young people grow in confidence and find their direction.",
+      "Our work includes wellbeing support, counselling and pastoral care. Spiritual support is available on request, respecting the wishes of everyone we serve.",
     points: [
-      "Mentoring and youth sessions",
-      "Music, creative and leadership activities",
-      "A safe place to belong",
+      "Wellbeing and pastoral care",
+      "Counselling support",
+      "Spiritual support on request",
     ],
   },
   {
-    slug: "education",
-    title: "Education and skills",
+    slug: "community-outreach",
+    title: "Community outreach",
     summary:
-      "Learning opportunities that open doors, from everyday life skills to training that supports work.",
+      "Meaningful community work starts by understanding people’s needs and responding with compassion and practical action.",
     points: [
-      "Workshops and short courses",
-      "Digital and life skills",
-      "Support for learners with disabilities",
+      "Food and clothing support",
+      "Advice, information and community assistance",
+      "Support for local churches and partner organisations",
     ],
   },
 ];
+
+// Who we support — groups named on the Charity Commission record
+export const beneficiaries = [
+  {
+    title: "Children and young people",
+    text: "Encouragement, mentoring, education and practical support.",
+  },
+  {
+    title: "People with disabilities",
+    text: "Inclusion, dignity and access to appropriate support.",
+  },
+  {
+    title: "The wider community",
+    text: "Support for members of the public through charitable and community activities.",
+  },
+  {
+    title: "Other charities and voluntary organisations",
+    text: "Working alongside organisations that share compatible charitable aims.",
+  },
+];
+
+// Our approach
+export const approach = [
+  { title: "Listen", text: "Understanding people’s circumstances and needs." },
+  { title: "Support", text: "Providing practical assistance, advice and encouragement." },
+  { title: "Connect", text: "Working with churches, charities and community partners." },
+  { title: "Encourage", text: "Helping people find opportunities and move forward." },
+  { title: "Serve", text: "Putting Christian faith into practical action." },
+];
+
+// Our mission — what we aim to do
+export const missionPoints = [
+  "Provide practical advice and support to Christian churches and their ministries",
+  "Develop ministry and pastoral outreach programmes",
+  "Share the Christian faith through appropriate evangelistic activities",
+  "Develop and support musical worship and related community activities",
+  "Provide pastoral care to local churches and the wider community",
+  "Support activities that help prevent or relieve poverty",
+  "Contribute to the advancement of education",
+  "Support children, young people and vulnerable members of society",
+  "Work alongside other charities and voluntary organisations",
+  "Promote compassion, dignity and practical care within our communities",
+];
+
+export const trustees = [
+  { name: "Sunday Shonde", role: "Chair", appointed: "21 February 2024" },
+  { name: "Oluwinka Abayomi Adeniyi", role: "Trustee", appointed: "21 February 2024" },
+  { name: "Olaide Ogun", role: "Trustee", appointed: "21 February 2024" },
+];
+
+export const policies = [
+  "Safeguarding",
+  "Bullying and harassment",
+  "Complaints",
+  "Financial reserves",
+  "Internal financial controls",
+  "Internal risk management",
+  "Serious incident reporting",
+  "Social media",
+  "Trustee conflicts of interest",
+  "Trustee expenses",
+  "Charity funds",
+  "Campaigns and political activity",
+  "External speakers at charity events",
+];
+
+export const finances = {
+  yearEnd: "31 March 2025",
+  income: "£2,000",
+  expenditure: "£2,850",
+  returnReceived: "28 January 2026",
+  volunteers: 10,
+};

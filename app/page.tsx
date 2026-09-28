@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Wave from "@/components/Wave";
-import { programmes, site } from "@/lib/site";
+import { approach, beneficiaries, programmes, site } from "@/lib/site";
 
 export default function Home() {
   return (
@@ -8,23 +8,30 @@ export default function Home() {
       <section className="hero">
         <div className="wrap hero-grid">
           <div>
-            <h1>Faith that shows up for people</h1>
+            <p className="eyebrow">{site.tagline}</p>
+            <h1>Caring for people. Strengthening communities.</h1>
             <p className="lead">
-              We help churches reach their communities, and we stand alongside young people, families
-              and anyone going through a hard season, with care, worship and practical support.
+              Caring Souls Foundation is a Christian charity serving communities throughout England.
+              We put faith into action through practical support, community outreach, mentoring,
+              pastoral care, education and assistance for people experiencing hardship.
             </p>
             <div className="btn-row">
-              <Link href="/get-involved/" className="btn btn-primary">
+              <Link href="/donate/" className="btn btn-primary">
+                Support our work
+              </Link>
+              <Link href="/get-involved/" className="btn btn-ghost">
                 Get involved
               </Link>
-              <Link href="/what-we-do/" className="btn btn-ghost">
-                See what we do
-              </Link>
             </div>
-            <span className="registered">Registered charity {site.charityNumber}, serving communities across England</span>
+            <span className="registered">Registered charity {site.charityNumber}</span>
           </div>
           <div className="hero-mark">
-            <img src="/images/emblem.png" alt="Caring Souls Foundation emblem: three figures held together" width={560} height={486} />
+            <img
+              src="/images/emblem.png"
+              alt="Caring Souls Foundation emblem: three figures held together"
+              width={560}
+              height={486}
+            />
           </div>
         </div>
       </section>
@@ -33,9 +40,12 @@ export default function Home() {
       <section className="section" style={{ paddingTop: "clamp(2rem, 5vw, 3.5rem)" }}>
         <div className="wrap">
           <div className="section-intro">
-            <h2>How we help</h2>
+            <h2>Faith. Compassion. Action.</h2>
             <p>
-              Six areas of work, one purpose: putting faith into practice where people live.
+              We support children and young people, people with disabilities, vulnerable individuals
+              and the wider community, while working alongside churches, charities and voluntary
+              organisations. From food and clothing support to advice, mentoring and pastoral care,
+              our goal is simple: to serve people with compassion and make a practical difference.
             </p>
           </div>
           <ul className="programmes">
@@ -64,16 +74,14 @@ export default function Home() {
             <cite>1 John 3:18</cite>
           </blockquote>
           <div>
-            <h2>Why we exist</h2>
+            <h2>Our faith, our foundation</h2>
             <p>
-              Caring Souls Foundation was set up to advance the Christian faith for the good of the
-              public. For us that means more than Sunday services. It means equipping local churches,
-              gathering people in worship, and meeting real needs: poverty, isolation, and young
-              people looking for direction.
+              Christian faith is at the heart of Caring Souls Foundation. Our registered charitable
+              purpose is to advance the Christian religion in the UK for the benefit of the public.
             </p>
             <p>
-              We work with churches, schools and other charities, and our door is open to everyone,
-              whatever their background or beliefs.
+              We believe faith should be shown not only in words but through service, compassion and
+              practical support, offered with dignity and respect for every person.
             </p>
             <div className="btn-row">
               <Link href="/about/" className="btn btn-ghost">
@@ -83,29 +91,64 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Wave top="#0b2a5b" bottom="#f2f7f9" />
+      <Wave top="#0b2a5b" bottom="#ffffff" />
 
-      <section className="section band-mist" style={{ paddingTop: "clamp(2rem, 5vw, 3.5rem)" }}>
+      <section className="section" style={{ paddingTop: "clamp(2rem, 5vw, 3.5rem)" }}>
         <div className="wrap">
           <div className="section-intro">
-            <h2>Ways you can help</h2>
-            <p>Every gift of time, money or prayer goes straight into this work.</p>
+            <h2>Who we support</h2>
+            <p>Our work is not limited to one community or location. We operate throughout England.</p>
+          </div>
+          <div className="ways">
+            {beneficiaries.map((b) => (
+              <div key={b.title} className="way">
+                <h3>{b.title}</h3>
+                <p>{b.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section band-mist">
+        <div className="wrap">
+          <div className="section-intro">
+            <h2>From faith to action</h2>
+            <p>Genuine care takes more than good intentions. Our approach is built on five steps.</p>
+          </div>
+          <ol className="steps">
+            {approach.map((a) => (
+              <li key={a.title}>
+                <h3>{a.title}</h3>
+                <p>{a.text}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <Wave top="#f2f7f9" bottom="#ffffff" flip />
+      <section className="section" style={{ paddingTop: "clamp(2rem, 5vw, 3.5rem)" }}>
+        <div className="wrap">
+          <div className="section-intro">
+            <h2>You can help us care for more people</h2>
+            <p>Our work is made possible by people who believe in supporting their communities.</p>
           </div>
           <div className="ways">
             <div className="way way-feature">
               <h3>Give</h3>
-              <p>A one-off or monthly gift funds food parcels, youth sessions and pastoral visits.</p>
-              <Link href="/donate/">Make a donation</Link>
+              <p>Your donation helps us respond to practical needs and sustain our charitable activities.</p>
+              <Link href="/donate/">Donate now</Link>
             </div>
             <div className="way">
               <h3>Volunteer</h3>
-              <p>Help at events, mentor a young person, or bring your skills in music, admin or teaching.</p>
-              <Link href="/get-involved/">Become a volunteer</Link>
+              <p>Give your time, skills or experience to support our work in the community.</p>
+              <Link href="/get-involved/">Volunteer with us</Link>
             </div>
             <div className="way">
-              <h3>Partner with us</h3>
-              <p>Churches and organisations can work with us on outreach, events and community projects.</p>
-              <Link href="/contact/">Start a conversation</Link>
+              <h3>Partner</h3>
+              <p>Work with us to reach more people and strengthen community support together.</p>
+              <Link href="/get-involved/#partner">Partner with us</Link>
             </div>
           </div>
         </div>

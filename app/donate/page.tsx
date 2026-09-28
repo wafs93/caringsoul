@@ -4,8 +4,8 @@ import PageHero from "@/components/PageHero";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Donate",
-  description: "Support Caring Souls Foundation with a one-off or regular gift.",
+  title: "Support our work",
+  description: "Give a one-off or regular gift to Caring Souls Foundation.",
 };
 
 export default function Donate() {
@@ -14,28 +14,20 @@ export default function Donate() {
   return (
     <>
       <PageHero
-        title="Support our work"
-        intro="Your gift helps churches reach their communities and puts practical help in the hands of people who need it."
+        title="You can help us care for more people"
+        intro="Our work is made possible through people who believe in supporting their communities."
       />
 
       <section className="section" style={{ paddingTop: "clamp(1.5rem, 4vw, 3rem)" }}>
         <div className="wrap">
           <div className="section-intro">
-            <h2>What your gift makes possible</h2>
-            <ul className="values">
-              <li>
-                <strong>£10</strong>
-                <span>Provides essentials for a family facing a difficult week.</span>
-              </li>
-              <li>
-                <strong>£25</strong>
-                <span>Covers materials for a youth mentoring session.</span>
-              </li>
-              <li>
-                <strong>£50</strong>
-                <span>Helps run a community worship and outreach event.</span>
-              </li>
-            </ul>
+            <h2>Where your gift goes</h2>
+            <p>
+              Your support helps us provide practical assistance, develop community outreach, support
+              children and young people, offer mentoring and pastoral care, and sustain our charitable
+              activities throughout England. As a small charity, every contribution makes a direct
+              difference to what we can do.
+            </p>
           </div>
 
           <div className="give-options">
@@ -69,8 +61,8 @@ export default function Donate() {
                 </dl>
               ) : (
                 <p className="note">
-                  For bank details, email{" "}
-                  <a href={`mailto:${site.email}`}>{site.email}</a>.
+                  For bank details, email <a href={`mailto:${site.email}`}>{site.email}</a> or call{" "}
+                  {site.phone}.
                 </p>
               )}
             </div>
@@ -81,6 +73,10 @@ export default function Donate() {
             cost to you. Tell us when you donate and we’ll send you a declaration. Caring Souls
             Foundation is registered charity {site.charityNumber}.
           </p>
+
+          <div className="btn-row">
+            <Link href="/get-involved/" className="btn btn-ghost">Other ways to help</Link>
+          </div>
         </div>
       </section>
     </>

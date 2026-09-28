@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
-import { site } from "@/lib/site";
+import { approach, missionPoints, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About us",
-  description: "Who we are, what we believe, and how Caring Souls Foundation is run.",
+  description:
+    "Caring Souls Foundation is a Charitable Incorporated Organisation registered with the Charity Commission for England and Wales.",
 };
 
 export default function About() {
   return (
     <>
       <PageHero
-        title="About the foundation"
-        intro="A Christian charity putting faith to work through churches, worship and practical care."
+        title="Who we are"
+        intro="A Christian charity putting faith into practical action in communities throughout England."
       />
 
       <section className="section" style={{ paddingTop: "clamp(1.5rem, 4vw, 3rem)" }}>
@@ -21,17 +22,20 @@ export default function About() {
           <div>
             <h2>Our story</h2>
             <p>
-              Caring Souls Foundation is a charitable incorporated organisation registered with the
-              Charity Commission for England and Wales. We began with a simple conviction: that the
-              love of God should be seen in how we treat our neighbours.
+              Caring Souls Foundation is a Charitable Incorporated Organisation (CIO), registered with
+              the Charity Commission for England and Wales on {site.registeredDate}.
             </p>
             <p>
-              Today we support local churches with their ministry and outreach, hold worship events
-              that bring communities together, and offer pastoral care and practical help to people
-              who need it most, including children and young people and people living with disabilities.
+              Our purpose is to advance the Christian religion in the UK for the benefit of the public,
+              while putting Christian faith into practical action within our communities. We believe
+              faith should be demonstrated not only through words, but through service, compassion and
+              practical support.
             </p>
             <p>
-              We work throughout England, partnering with churches, community groups and other charities.
+              Our work includes supporting people experiencing hardship, providing advice and
+              assistance, developing ministry and pastoral outreach programmes, supporting local
+              churches and the wider community, and undertaking charitable activities that help
+              prevent or relieve poverty and advance education.
             </p>
           </div>
           <aside className="facts" aria-label="Charity details">
@@ -47,10 +51,10 @@ export default function About() {
               </dd>
               <dt>Structure</dt>
               <dd>Charitable incorporated organisation (CIO)</dd>
+              <dt>Registered</dt>
+              <dd>{site.registeredDate}</dd>
               <dt>Where we work</dt>
               <dd>Throughout England</dd>
-              <dt>Who we help</dt>
-              <dd>Children and young people, people with disabilities, churches and voluntary groups, and the wider public</dd>
             </dl>
           </aside>
         </div>
@@ -59,37 +63,34 @@ export default function About() {
       <section className="section band-mist">
         <div className="wrap split">
           <div>
-            <h2>Our purpose</h2>
+            <h2>Our mission</h2>
             <p>
-              Our charitable purpose is to advance the Christian religion in the UK for the benefit of
-              the public. We carry this out by:
+              Our mission is to put Christian faith into action by serving people and strengthening
+              communities. We aim to:
             </p>
-            <ul>
-              <li>giving practical advice and support to churches developing their ministry, pastoral care and outreach</li>
-              <li>sharing the gospel, developing and holding musical worship events, and offering pastoral care to churches and the wider community</li>
-              <li>relieving poverty, helping young people get on in life, and advancing education, as a practical outworking of faith</li>
+            <ul className="ticks">
+              {missionPoints.map((m) => (
+                <li key={m}>{m}</li>
+              ))}
             </ul>
           </div>
           <div>
-            <h2>What guides us</h2>
+            <h2>Our approach</h2>
             <ul className="values">
-              <li>
-                <strong>Compassion</strong>
-                <span>We meet people as they are and treat everyone with dignity.</span>
-              </li>
-              <li>
-                <strong>Faithfulness</strong>
-                <span>Our work flows from our Christian faith, and we keep our promises.</span>
-              </li>
-              <li>
-                <strong>Community</strong>
-                <span>We achieve more together, with churches and partners alongside us.</span>
-              </li>
-              <li>
-                <strong>Integrity</strong>
-                <span>We are open about how we use every gift we receive.</span>
-              </li>
+              {approach.map((a) => (
+                <li key={a.title}>
+                  <strong>{a.title}</strong>
+                  <span>{a.text}</span>
+                </li>
+              ))}
             </ul>
+            <h2 style={{ marginTop: "2.5rem" }}>Our faith</h2>
+            <p>
+              Our registered charitable objects state that the purpose of the CIO is to advance the
+              Christian religion in the UK for the benefit of the public. We express that faith through
+              practical service, Christian ministry, pastoral outreach and support for local churches
+              and the wider community, with compassion and respect for every person.
+            </p>
           </div>
         </div>
       </section>
@@ -100,7 +101,7 @@ export default function About() {
           <p>Give, volunteer or partner with us to support communities across England.</p>
           <div className="btn-row">
             <Link href="/get-involved/" className="btn btn-primary">Get involved</Link>
-            <Link href="/contact/" className="btn btn-ghost">Contact us</Link>
+            <Link href="/governance/" className="btn btn-ghost">How we are run</Link>
           </div>
         </div>
       </section>
