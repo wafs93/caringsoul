@@ -14,7 +14,7 @@ export const site = {
   description:
     "Caring Souls Foundation is a Christian charity serving communities throughout England with practical support, community outreach, mentoring, pastoral care and education.",
 
-  email: "sunshoos@hotmail.com",
+  email: "info@caringsouls.org.uk",
   phone: "07403 203506",
   address: {
     line1: "Mill Point",
